@@ -115,3 +115,19 @@ input:focus::placeholder {
 .hexagon:nth-child(5) { top: 200px; left: 0px; }
 .hexagon:nth-child(6) { top: 100px; left: 0px; }
 .hexagon:nth-child(7) { top: 150px; left: 90px; }
+
+
+.foundwordscontainer{
+    padding-left: 40px;
+    padding-right:40px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1em;
+
+}
+
+.foundwords{
+    padding-top:20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+}

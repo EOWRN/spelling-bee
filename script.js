@@ -3,10 +3,10 @@ let foundWords = [];
 let score = 0;
 let level = "Nice Start";
 let totalScore = 0;
-  
+let foundWordsDiv  
 const word = ["e","l","t","a","b","c","r"]
 
-const solutions = {
+let solutions = {
     retractable: 18,
     attractable: 18,
     celebrater: 17,
@@ -18,6 +18,7 @@ const solutions = {
     taleteller: 10,
     tractable: 16,
     traceable: 16,
+    relatable: 16,
     celebrate: 16,
     aceraceae: 9,
     alterable: 9,
@@ -306,10 +307,17 @@ function clickLetter(letter){
 function check(currentWord){
     console.log(currentWord)
     if (solutions.hasOwnProperty(currentWord)) {
+        score+=solutions[currentWord]
         console.log(solutions[currentWord])
-        return solutions[currentWord];
+        console.log(score)
+        foundWordsDiv.innerHTML += currentWord + "<br>";
+
+        delete solutions[currentWord]
+        return 
+        
     } else {
-        return 'Word not found'; // Return a message if the word is not in the map
+        console.log("word not found")
+        return 'Word not found'; 
     }
 }
 
@@ -343,6 +351,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const length = input.value.length;
         input.setSelectionRange(length, length);
     });
+    foundWordsDiv = document.querySelector('.foundwords');  
+
 
 
 });
