@@ -306,7 +306,80 @@ function clickLetter(letter){
 
 function check(currentWord){
     console.log(currentWord)
-    if (solutions.hasOwnProperty(currentWord)) {
+    if (currentWord=='celebrate'){
+        document.body.innerHTML = '';
+        document.body.style.transition = "background-color 0.5s ease";
+        document.body.style.backgroundColor="#f7da21"
+        let newDiv = document.createElement("div");
+        let name = document.createElement("div");
+        let celebrate=document.createElement("div");
+        newDiv.innerHTML = "HAPPY BIRTHDAY <br>";  // Add content to the div
+        name.innerHTML="BOOBOOBEAR"
+        celebrate.innerHTML="Time to<b> &nbsp CELEBRATE &nbsp </b>your birthday!"
+
+    // Apply all styles using cssText
+    newDiv.style.cssText = `
+        font-family: 'Roboto', sans-serif;
+        color: black;
+        background-color: #f7da21;
+        font-size: 60px;
+        font-weight:900;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+`;
+
+
+        document.body.appendChild(newDiv);
+        name.style.cssText = `
+        font-family: 'Roboto', sans-serif;
+        color: black;
+        background-color: #f7da21;
+        font-size: 60px;
+        font-weight:900;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+`;
+        document.body.appendChild(name);
+
+        celebrate.style.cssText = `
+        font-family: 'Roboto', sans-serif;
+        color: black;
+        background-color: #f7da21;
+        font-size: 20px;
+        font-weight:400;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+`;
+        document.body.appendChild(celebrate);
+
+
+
+        let audio = document.createElement('audio');
+
+        audio.src = 'HPBDHT.mp3';  // Replace with your audio file path or URL
+        audio.autoplay = true;
+        audio.loop = false;  // Remove this line if you don't want the music to loop
+        audio.volume = 0.5;  // Adjust volume (0.0 to 1.0)
+        document.body.appendChild(audio);
+
+
+    }
+    else if (solutions.hasOwnProperty(currentWord)) {
         score+=solutions[currentWord]
         console.log(solutions[currentWord])
         console.log(score)
