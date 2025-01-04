@@ -1,9 +1,10 @@
 let currentWord = "";
 let foundWords = [];
 let score = 0;
-let level = "Nice Start";
+let rank = "Good Start";
 let totalScore = 0;
 let foundWordsDiv  
+let rankcontainer
 const word = ["e","l","t","a","b","c","r"]
 
 let solutions = {
@@ -258,44 +259,36 @@ function generateHexagons() {
         }
         container.appendChild(hexagon);
         
-        //hexagonLetters[randomLetter] = hexagon;
         hexagon.innerHTML = randomLetter;
         
     }
     
-    /*
-    let lettersUsed = [];
-    
-    for (let i = 0; i < 7; i++) {
-        const hexagon = document.createElement('div');
-        hexagon.className = 'hexagon';
-        let randomLetter = "";
-        let random = 0;
-        if(i<6) {
-          while(lettersUsed.indexOf(randomLetter) > -1 || randomLetter == "") {
-            random = Math.floor(Math.random() * outerLetters.length);
-            randomLetter = outerLetters[random].toUpperCase();
-          }
-          lettersUsed.push(randomLetter);
-        }
-        else {
-          randomLetter = centerLetter.toUpperCase();
-        }
-        hexagon.innerHTML = randomLetter;
-        hexagon.addEventListener('click', () => {
-            clickLetter(randomLetter);
-        });
-        hexagon.addEventListener('mouseover', () => {
-            hexagon.style.backgroundColor = '#ffff77';
-        });
-        hexagon.addEventListener('mouseout', () => {
-            hexagon.style.backgroundColor = '#eeee99';
-        });
-        container.appendChild(hexagon);
-        hexagonLetters[randomLetter] = hexagon;
-    }
-        */
 }
+function generateScore() {
+    const progressBar = document.getElementsByClassName('progressbar')[0]; // Get the first progressbar    
+    
+    const progressline=document.createElement('div');
+    progressline.className='progressline'
+    progressBar.appendChild(progressline);
+
+    // Define the total number of stages (9 in this case)
+    const stages = 9;
+  
+    // Create nodes at different positions on the progress bar
+    for (let i = 1; i <= stages; i++) {
+      const node = document.createElement('div');
+      node.className = 'node';  // Add class to style it
+      progressBar.appendChild(node);
+    }
+
+    const scorebubble=document.createElement('div');
+    scorebubble.innerHTML=score;
+    scorebubble.className='scorebubble'
+    progressBar.appendChild(scorebubble)
+
+    
+  }
+
 
 function clickLetter(letter){
     currentWord+=letter;
@@ -386,6 +379,9 @@ function check(currentWord){
         foundWordsDiv.innerHTML += currentWord + "<br>";
 
         delete solutions[currentWord]
+        checkrank(score);
+        scoreupdate = document.getElementsByClassName('scorebubble')[0];    
+        scoreupdate.innerHTML=score
         return 
         
     } else {
@@ -394,8 +390,119 @@ function check(currentWord){
     }
 }
 
+function checkrank(score){
+    if (score<8){
+        rank="Good Start"
+        rankcontainer.innerHTML=rank;
+        const targetnode = document.createElement('div');
+        targetnode.className = 'targetnode';
+        const progbar = document.getElementsByClassName('progressbar')[0];
+        targetnode.style.cssText="position: absolute; top:0px"
+        progbar.appendChild(targetnode);
+        scorebub=document.getElementsByClassName('scorebubble')[0];
+        scorebub.style.left = '11.5%';
+
+
+    }
+    else if (score<20){
+        rank="Moving Up"
+        rankcontainer.innerHTML=rank;
+        const targetnode = document.createElement('div');
+        targetnode.className = 'targetnode';
+
+
+        const yellownode = document.createElement('div');
+        yellownode.className = 'yellownode';
+        const progbar = document.getElementsByClassName('progressbar')[0];
+        targetnode.style.cssText="position: absolute; top:0px"
+        progbar.appendChild(targetnode);
+        scorebub=document.getElementsByClassName('scorebubble')[0];
+        scorebub.style.left = '24%';
+
+    }
+    else if (score<30){
+        rank="Good"
+        rankcontainer.innerHTML=rank;
+        const targetnode = document.createElement('div');
+        targetnode.className = 'targetnode';
+
+        const progbar = document.getElementsByClassName('progressbar')[0];
+        targetnode.style.cssText="position: absolute; top:0px"
+        progbar.appendChild(targetnode);
+        scorebub=document.getElementsByClassName('scorebubble')[0];
+        scorebub.style.left = '36.5%';
+
+    }
+    else if (score<60){
+        rank="Solid"
+        rankcontainer.innerHTML=rank;
+        const targetnode = document.createElement('div');
+        targetnode.className = 'targetnode';
+
+        const progbar = document.getElementsByClassName('progressbar')[0];
+        targetnode.style.cssText="position: absolute; top:0px"
+        progbar.appendChild(targetnode);
+        scorebub=document.getElementsByClassName('scorebubble')[0];
+        scorebub.style.left = '49%';
+
+    }
+    else if (score<100){
+        rank="Nice"
+        rankcontainer.innerHTML=rank;
+        const targetnode = document.createElement('div');
+        targetnode.className = 'targetnode';
+
+        const progbar = document.getElementsByClassName('progressbar')[0];
+        targetnode.style.cssText="position: absolute; top:0px"
+        progbar.appendChild(targetnode);
+        scorebub=document.getElementsByClassName('scorebubble')[0];
+        scorebub.style.left = '61.5%';
+
+    }
+    else if (score<180){
+        rank="Great"
+        rankcontainer.innerHTML=rank;
+        const targetnode = document.createElement('div');
+        targetnode.className = 'targetnode';
+
+        const progbar = document.getElementsByClassName('progressbar')[0];
+        targetnode.style.cssText="position: absolute; top:0px"
+        progbar.appendChild(targetnode);
+        scorebub=document.getElementsByClassName('scorebubble')[0];
+        scorebub.style.left = '74%';
+
+    }
+    else if (score<260){
+        rank="Amazing"
+        rankcontainer.innerHTML=rank;
+        const targetnode = document.createElement('div');
+        targetnode.className = 'targetnode';
+
+        const progbar = document.getElementsByClassName('progressbar')[0];
+        targetnode.style.cssText="position: absolute; top:0px"
+        progbar.appendChild(targetnode);
+        scorebub=document.getElementsByClassName('scorebubble')[0];
+        scorebub.style.left = '86.5%';
+
+    }
+    else if (score<350){
+        rank="Genius"
+        rankcontainer.innerHTML=rank;
+        const targetnode = document.createElement('div');
+        targetnode.className = 'targetnode';
+
+        const progbar = document.getElementsByClassName('progressbar')[0];
+        targetnode.style.cssText="position: absolute; top:0px"
+        progbar.appendChild(targetnode);
+        scorebub=document.getElementsByClassName('scorebubble')[0];
+        scorebub.style.left = '99%';
+
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     generateHexagons();
+    generateScore();
     const input = document.getElementsByClassName('input')[0];
     
     input.addEventListener('keydown', (event) => {
@@ -425,7 +532,7 @@ document.addEventListener('DOMContentLoaded', () => {
         input.setSelectionRange(length, length);
     });
     foundWordsDiv = document.querySelector('.foundwords');  
-
+    rankcontainer=document.querySelector('.rank')
 
 
 });

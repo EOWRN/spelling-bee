@@ -24,7 +24,7 @@
 }
 
 hr{
-    color: gray
+    color: lightgray
 }
 
 .container{
@@ -81,7 +81,7 @@ input:focus::placeholder {
     justify-content: center;
     align-items: center;
     color: black;
-    font-size: 20px;
+    font-size: 28px;
     font-weight: bold;
     font-family: Arial, sans-serif;
     cursor: pointer;
@@ -116,18 +116,80 @@ input:focus::placeholder {
 .hexagon:nth-child(6) { top: 100px; left: 0px; }
 .hexagon:nth-child(7) { top: 150px; left: 90px; }
 
+.rank{
+    padding-bottom: 20px;
+    font-weight:400;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 
 .foundwordscontainer{
-    padding-left: 40px;
     padding-right:40px;
+    padding-top:20px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1em;
 
 }
 
 .foundwords{
-    padding-top:20px;
+    padding-top:40px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1em;
     line-height: 1.5em;
 }
+
+
+.node {
+    width: 8px;  /* Width of the node */
+    height: 8px;  /* Height of the node */
+    background-color: lightgray;
+    border-radius: 50%;  /* Make the node circular */
+    position: relative;  /* Positioning the nodes along the hr */
+
+}
+.yellownode {
+    width: 8px;  /* Width of the node */
+    height: 8px;  /* Height of the node */
+    background-color: #f7da21;
+    border-radius: 50%;  /* Make the node circular */
+    position: relative;  /* Positioning the nodes along the hr */
+
+}
+.progressbar{
+    position:relative;
+}
+.progressline{
+    width:100%;
+    top:3px;
+    height:2px;
+    background-color: lightgray;
+    position: absolute;
+
+}
+
+.scorebubble{
+    width: 30px;
+    height:30px;
+    border-radius:50%;
+    position: absolute;
+    background-color:#f7da21;
+    top: -11px; 
+    left: -11px; 
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size:14px;
+    font-weight:500;
+    line-height:30px;
+
+}
+
+.node:nth-child(1) { position:absolute; top: 0px; left: 0%; }
+.node:nth-child(2) { position:absolute; top: 0px; left: 12.5%; }
+.node:nth-child(3) { position:absolute; top: 0px; left: 25%; }
+.node:nth-child(4) { position:absolute; top: 0px; left: 37.5%; }
+.node:nth-child(5) { position:absolute; top: 0px; left: 50%; }
+.node:nth-child(6) { position:absolute; top: 0px; left: 62.5%; }
+.node:nth-child(7) { position:absolute; top: 0px; left: 75%; }
+.node:nth-child(8) { position:absolute; top: 0px; left: 87.5%; }
+.node:nth-child(9) { position:absolute; top: 0px; left: 100%; }
+
