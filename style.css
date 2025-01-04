@@ -147,12 +147,13 @@ input:focus::placeholder {
     position: relative;  /* Positioning the nodes along the hr */
 
 }
-.yellownode {
+.pips {
     width: 8px;  /* Width of the node */
     height: 8px;  /* Height of the node */
     background-color: #f7da21;
     border-radius: 50%;  /* Make the node circular */
-    position: relative;  /* Positioning the nodes along the hr */
+    position: absolute;  /* Positioning the nodes along the hr */
+    top:0px;
 
 }
 .progressbar{

@@ -376,8 +376,10 @@ function check(currentWord){
         score+=solutions[currentWord]
         console.log(solutions[currentWord])
         console.log(score)
-        foundWordsDiv.innerHTML += currentWord + "<br>";
-
+        let words = foundWordsDiv.innerHTML.split('<br>'); 
+        words.push(currentWord);  
+        words.sort(); 
+        foundWordsDiv.innerHTML = words.join('<br>');  
         delete solutions[currentWord]
         checkrank(score);
         scoreupdate = document.getElementsByClassName('scorebubble')[0];    
@@ -402,6 +404,10 @@ function checkrank(score){
         scorebub=document.getElementsByClassName('scorebubble')[0];
         scorebub.style.left = '11.5%';
 
+        const pips=document.createElement('div')
+        pips.className='pips';
+        pips.style.cssText='top:0px; left:0%'
+        progbar.appendChild(pips);
 
     }
     else if (score<20){
@@ -418,6 +424,10 @@ function checkrank(score){
         progbar.appendChild(targetnode);
         scorebub=document.getElementsByClassName('scorebubble')[0];
         scorebub.style.left = '24%';
+        const pips=document.createElement('div')
+        pips.className='pips';
+        pips.style.cssText='top:0px; left:12.5%'
+        progbar.appendChild(pips);
 
     }
     else if (score<30){
@@ -431,6 +441,10 @@ function checkrank(score){
         progbar.appendChild(targetnode);
         scorebub=document.getElementsByClassName('scorebubble')[0];
         scorebub.style.left = '36.5%';
+        const pips=document.createElement('div')
+        pips.className='pips';
+        pips.style.cssText='top:0px; left:25%'
+        progbar.appendChild(pips);
 
     }
     else if (score<60){
@@ -444,6 +458,10 @@ function checkrank(score){
         progbar.appendChild(targetnode);
         scorebub=document.getElementsByClassName('scorebubble')[0];
         scorebub.style.left = '49%';
+        const pips=document.createElement('div')
+        pips.className='pips';
+        pips.style.cssText='top:0px; left:37.5%'
+        progbar.appendChild(pips);
 
     }
     else if (score<100){
@@ -457,6 +475,10 @@ function checkrank(score){
         progbar.appendChild(targetnode);
         scorebub=document.getElementsByClassName('scorebubble')[0];
         scorebub.style.left = '61.5%';
+        const pips=document.createElement('div')
+        pips.className='pips';
+        pips.style.cssText='top:0px; left:50%'
+        progbar.appendChild(pips);
 
     }
     else if (score<180){
@@ -470,6 +492,10 @@ function checkrank(score){
         progbar.appendChild(targetnode);
         scorebub=document.getElementsByClassName('scorebubble')[0];
         scorebub.style.left = '74%';
+        const pips=document.createElement('div')
+        pips.className='pips';
+        pips.style.cssText='top:0px; left:62.5%'
+        progbar.appendChild(pips);
 
     }
     else if (score<260){
@@ -483,6 +509,10 @@ function checkrank(score){
         progbar.appendChild(targetnode);
         scorebub=document.getElementsByClassName('scorebubble')[0];
         scorebub.style.left = '86.5%';
+        const pips=document.createElement('div')
+        pips.className='pips';
+        pips.style.cssText='top:0px; left:75%'
+        progbar.appendChild(pips);
 
     }
     else if (score<350){
@@ -496,6 +526,10 @@ function checkrank(score){
         progbar.appendChild(targetnode);
         scorebub=document.getElementsByClassName('scorebubble')[0];
         scorebub.style.left = '99%';
+        const pips=document.createElement('div')
+        pips.className='pips';
+        pips.style.cssText='top:0px; left:87.5%'
+        progbar.appendChild(pips);
 
     }
 }
