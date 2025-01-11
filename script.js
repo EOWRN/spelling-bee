@@ -99,6 +99,9 @@ let solutions = {
     treacle: 7,
     treater: 7,
     treelet: 7,
+    batterer: 7,
+    crabber:6,
+    clearer: 6,
     aerate: 6,
     albert: 6,
     arable: 6,
@@ -152,6 +155,7 @@ let solutions = {
     terete: 6,
     tracer: 6,
     treble: 6,
+    taller:6,
     accra: 5,
     acerb: 5,
     alert: 5,
@@ -196,6 +200,11 @@ let solutions = {
     trace: 5,
     tract: 5,
     treat: 5,
+    abler: 5,
+    barre:5,
+    carer:5,
+    rarer: 5,
+    rebar:5,
     aare: 1,
     acer: 1,
     acre: 1,
@@ -235,8 +244,11 @@ let solutions = {
     tart: 1,
     tear: 1,
     tera: 1,
-    tree: 1
+    tree: 1,
+    lace:1,
 };
+
+
 
 function generateHexagons() {
     let hexagons = document.getElementsByClassName('hexagon');
@@ -306,7 +318,7 @@ function check(currentWord){
         let newDiv = document.createElement("div");
         let name = document.createElement("div");
         let celebrate=document.createElement("div");
-        newDiv.innerHTML = "HAPPY BIRTHDAY <br>";  // Add content to the div
+        newDiv.innerHTML = "HAPPY BIRTHDAY <br><br>";  // Add content to the div
         name.innerHTML="BOOBOOBEAR"
         celebrate.innerHTML="Time to<b> &nbsp CELEBRATE &nbsp </b>your birthday!"
 
